@@ -1,0 +1,14 @@
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.card-body div {
+  font-size: 18px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.card-body p {
+  font-weight: 100;
+  font-style: italic;
+}

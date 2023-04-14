@@ -1,0 +1,21 @@
+.sms-list-header {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: xx-large;
+}
+
+.hoverable-clickable-row:hover {
+    background-color: rgb(224, 238, 238);
+    transition: 0.3s;
+}
+
+.green-delivered-status {
+    color: rgb(5, 98, 5);
+    font-weight: 700;
+}
+
+.red-failed-status {
+    font-weight: 700;
+    color: rgb(208, 30, 30);
+}

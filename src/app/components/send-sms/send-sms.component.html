@@ -1,0 +1,52 @@
+<div *ngIf="apiErrorMessage">
+    <p class="errorMessage">{{apiErrorMessage}}</p>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="header">
+            Send new SMS
+        </div>
+    </div>
+    <div class="row">
+        <div *ngIf="errorMessageVisible">
+            <p class="errorMessage">{{errorMessageText}}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="phoneNumber">
+            <input type="text" disabled="true" value="{{countryCode}}" style="width: 35px"/>
+            <select [(ngModel)]="senderSelectedPrefix">
+                <option *ngFor="let prefix of prefixes">{{ prefix }}</option>
+            </select>
+            <input type="text" placeholder="From" maxlength="7" style="width: 70px" [(ngModel)]="senderPhoneNumber"/>
+        </div>
+    </div>
+    <div class="row">
+        <div class="phoneNumber">
+            <input type="text" disabled="true" value="{{countryCode}}" style="width: 35px"/>
+            <select [(ngModel)]="receiverSelectedPrefix">
+                <option *ngFor="let prefix of prefixes">{{ prefix }}</option>
+            </select>
+            <input type="text" placeholder="To" maxlength="7" style="width: 70px" [(ngModel)]="receiverPhoneNumber"/>
+            <button (click)="addReceiver()"> + Add receiver</button>
+        </div>
+        <div class="receivers">
+            <ul>
+                <li *ngFor="let receiver of to">{{receiver}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <textarea placeholder="Content..." [(ngModel)]="content"></textarea>
+    </div>
+    <div class="row">
+        <button (click)="send()" style="width: 150px">Send SMS</button>
+    </div>
+    <div class="row">
+        <div class="successMessage" *ngIf="successMessageVisible">
+            <p>{{successMessageText}}</p>
+        </div>
+    </div>
+</div>

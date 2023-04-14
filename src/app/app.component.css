@@ -1,0 +1,14 @@
+.container {
+    margin-top: 50px;
+  }
+  
+  .row {
+    background-color: #fff;
+    box-shadow: 0px 0px 10px #aaa;
+    padding: 20px;
+  }
+  
+  .col {
+    text-align: center;
+  }
+  

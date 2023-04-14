@@ -1,0 +1,26 @@
+<div class="header">
+  SMS List
+</div>
+
+<div *ngIf="errorMessage; else smsTable">
+  <p class="errorMessage">{{ errorMessage }}</p>
+</div>
+
+<ng-template #smsTable>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>From</th>
+        <th>To</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hoverable-clickable-row" *ngFor="let sms of smsList" [routerLink]="['/sms', sms.id]" style="cursor: pointer;">
+        <td>{{sms.from}}</td>
+        <td>{{sms.to}}</td>
+        <td [ngClass]="sms.status === 'Delivered' ? 'green-delivered-status' : 'red-failed-status'">{{sms.status}}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>

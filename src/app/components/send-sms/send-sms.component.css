@@ -1,0 +1,12 @@
+.row {
+    margin-top: 10px;
+}
+
+.phoneNumber input, select, button {
+    margin-left: 6px;
+    height: 40px;
+}
+
+.receivers {
+    text-align: left;
+}
